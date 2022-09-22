@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a98aa85f88be4e1a8ccce246b6f33325 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_a98aa85f88be4e1a8ccce246b6f33325" ></div>
+        
+</body>
+<script>    
+    
+            var map_a98aa85f88be4e1a8ccce246b6f33325 = L.map(
+                "map_a98aa85f88be4e1a8ccce246b6f33325",
+                {
+                    center: [33.34407936458491, -115.84208313711439],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 9,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1cd28091336c45e4bba8c60aac7acfbf = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a98aa85f88be4e1a8ccce246b6f33325);
+        
+    
+            var marker_cdd2a70b4da6451ab1f406c7e61e126c = L.marker(
+                [33.2986, -115.9561],
+                {}
+            ).addTo(map_a98aa85f88be4e1a8ccce246b6f33325);
+        
+    
+        var popup_50b4a68cd7c14dbc9631d71c4cda937e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a8d31b46e40a418783ca579758db7fcc = $(`<div id="html_a8d31b46e40a418783ca579758db7fcc" style="width: 100.0%; height: 100.0%;">Salton City</div>`)[0];
+            popup_50b4a68cd7c14dbc9631d71c4cda937e.setContent(html_a8d31b46e40a418783ca579758db7fcc);
+        
+
+        marker_cdd2a70b4da6451ab1f406c7e61e126c.bindPopup(popup_50b4a68cd7c14dbc9631d71c4cda937e)
+        ;
+
+        
+    
+</script>

@@ -1,0 +1,23 @@
+select
+      pg_size_pretty(pg_total_relation_size(relid)) as total_size,
+      pg_size_pretty(pg_relation_size(relid, 'main')) as relation_size_main,
+      pg_size_pretty(pg_relation_size(relid, 'fsm')) as relation_size_fsm,
+      pg_size_pretty(pg_relation_size(relid, 'vm')) as relation_size_vm,
+      pg_size_pretty(pg_relation_size(relid, 'init')) as relation_size_init,
+      pg_size_pretty(pg_table_size(relid)) as table_size,
+      pg_size_pretty(pg_total_relation_size(relid) - pg_relation_size(relid)) as external_size
+ from 
+      pg_catalog.pg_statio_user_tables
+where 
+      schemaname = 'XXXX'
+  and relname like 'XXXXXX';
+  
+  The pg_size_pretty() function takes the result of another function and format it using bytes, kB, MB, GB or TB as appropriate.
+  The pg_relation_size() function returns the size of the table only, not included indexes or additional objects.
+  The pg_total_relation_size() function returns the total size of a table.
+  The pg_database_size() function return the size of the whole database.
+  The pg_indexes_size() function accepts the OID or table name as the argument and returns the total disk space used by all indexes attached of that table.
+  pg_column_size() : how much space that needs to store a specific value.
+  
+  
+  https://www.postgresql.org/docs/14/functions-admin.htmlSystem Administration Functions

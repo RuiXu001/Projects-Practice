@@ -1,0 +1,35 @@
+### https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+
+Anaconda Prompt:
+conda create -n env_name python==3.7 # create a VE. name is env_name, python version is 3.7
+
+conda activate env_name # active VE
+
+# install the package cudatoolkit and cudnn before TF
+conda install -c anaconda cudatoolkit
+conda install -c anaconda cudnn
+
+# check cud
+cmd: nvidia-smi 
+
+pip install tf-nightly-gpu
+pip install spyder # if use spyder or jupyter
+
+pip install [package] # install packages. 
+
+spyder # open spyder
+
+conda deactivate env_name 
+
+conda create --name env_name1 --clone env_name1 # cloning env_name1 as env_name2
+
+conda remove --name env_name --all
+
+
+###################################
+python:
+# check TF for gpu
+config = ConfigProto()
+config.gpu_options.allow_growth = True
+session = InteractiveSession(config=config)
+tf.config.experimental.list_physical_devices()

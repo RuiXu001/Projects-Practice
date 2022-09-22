@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Salton Sea Analysis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+	function myFunction() {
+	  document.getElementById("form1").submit();
+	}
+  </script>
+  <style> 
+		.left{ 
+		   width: 30%; 
+		   float: left; 
+		} 
+		.right{ 
+		   width: 56%; 
+		   float: right; 
+		} 
+		.clear-fix{ 
+		  clear: both; 
+		} 
+		
+		.image1
+		{padding-left: 100px;}
+		
+		.about { 
+		   width: 60%; 
+		   float: right; 
+		}
+		
+		.boxed {
+		width: 500px;
+  padding: 10px;
+  border: 2px solid green ;
+  border-radius: 25px;
+  text-align: justify;
+  color:teal;
+  background: lightyellow;
+} 
+	.left2{ 
+		   width: 70%; 
+		   float: right; 
+		}
+		
+		.boxed_air {
+		width: 400px;
+  padding: 10px;
+  border: 2px solid green ;
+  border-radius: 25px;
+  text-align: justify;
+  color:black;
+} 
+
+.boxed_aqi {
+		width: 150px;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid black ;
+  color:black;
+} 
+
+
+</style> 
+<style type="text/css">
+        input[type="radio"] {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container p-3 my-3 bg-dark text-white">
+			<br>
+            <h2><center>Salton Sea Air Pollution Analysis and Predictions</center></h2>
+        </div>
+  <br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('PM_map')}}">PM Prediction(satellite Based)</a>
+        </li>
+		 <li class="nav-item">
+          <a class="nav-link" href="{{url_for('historical_pm')}}">PM Data Analytics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('hourly_prediction')}}">Real Time Impact Prediction</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="{{url_for('hourly_da')}}">Air Quality Hourly Data Analytics</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="#">Yearly Health Data Impact</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="#">Health Data Analytics</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% block content %}
+	<br>
+	<div>
+	<div class='image1'>
+	<img src="{{url_for('static', filename='old_saltonsea.jpg')}}" alt="Salton Sea California" width="500" height="300">
+	<div class='right'>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="boxed">
+	<p>The Salton Sea, located in southern Riverside and northern Imperial counties in Southern California, is California' s largest lake. It used to be a vacation spot in 1950s.
+	Although large seas have cyclically formed and dried over historic time in the basin due to natural flooding from the Colorado River,
+	the current Salton Sea was formed when Colorado River floodwater breached an irrigation canal being constructed in the Imperial Valley in 1905 and flowed into the Salton Sink.
+	Because the Sea is a terminal lake,increasingly concentrated salts have resulted in a salinity that is currently 50 percent greater 
+	than that of the ocean.	
+	</p>
+	<p>
+	The increasing salinity and other water quality issues, including temperature extremes, eutrophication, and related anoxia and algal 
+	productivity, are adversely influencing the Sea's fish and wildlife resources. The pollution in Salton Sea changed it from vacation spot to wasteland. 17 percent of students suffering from Asthma.
+	In this website we show the data driven analytics on Salton Sea Air Quality and it's changing impact on Human Health.
+	</p>
+	</div>
+	</div>
+	<div class='left'>
+<br>	
+<br>
+	<img src="{{url_for('static', filename='saltonsea_new.jpg')}}" alt="Salton Sea California" width="500" height="300">
+	<br>
+	<br>
+	</div>
+	<div class='right'>
+	<br>
+	<br>
+	<br>
+	</div>
+	</div>
+	<br>
+	</div>
+{% endblock %}
+
+</body>
+</html>
