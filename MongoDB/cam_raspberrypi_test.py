@@ -17,11 +17,12 @@ class Cam(Document):
     img_type = StringField(required=True)
     image = FileField(thumbnail_size=(150,150,False))
 
-def upload_img(cam_id, img_type, img): # collect frame every minute
+def upload_img(cam_id, img_type, img):
+    img_str = np.array(img).tobytes() # convert to bytes
     record = Cam(
         cam_id = cam_id,
         img_type = img_type)
-    record.image.put(img)
+    record.image.put(img_str)
     record.save()
 
 if __name__ == '__main__':
@@ -37,3 +38,4 @@ if __name__ == '__main__':
             #show_img(img)
             start_time += interval
             upload_img('RaspberryPi', 'clock_test', img)
+            print('Uploading ', dt.now())
