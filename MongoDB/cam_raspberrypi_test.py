@@ -15,7 +15,7 @@ class Cam(Document):
     date_time = DateTimeField(default=dt.utcnow)
     cam_id = StringField(required=True)
     img_type = StringField(required=True)
-    image = FileField(thumbnail_size=(150,150,False))
+    image = FileField()
 
 def upload_img(cam_id, img_type, img):
     img_str = np.array(img).tobytes() # convert to bytes
